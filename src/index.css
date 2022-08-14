@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Oswald:wght@200&display=swap');
 :root{
   --primary : #113951;
   --secondary : #477187;
@@ -9,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'fira code','sans serif';
+  font-family: 'Alumni Sans Pinstripe', 'sans-serif';
 
 }
 body{
