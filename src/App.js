@@ -2,8 +2,13 @@ import { useState } from "react";
 function App(){
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("")
-const ops = ['/','*','+','-','.'];
+const ops = ['/','*','+','-','.','%'];
 
+const clr = () =>{
+  const value ="";
+  setCalc(value);
+  setResult(value)
+}
 const updateClac = value =>{
   if(
     ops.includes(value) && calc === '' ||
@@ -11,12 +16,14 @@ const updateClac = value =>{
   ){
     return;
   }
+
   setCalc(calc + value);
   
   if (!ops.includes(value)){
     setResult(eval(calc + value).toString());
   }
 }
+
 
   const createDigits = ()=>{
     const digits = [];
@@ -55,11 +62,13 @@ const updateClac = value =>{
           <button onClick ={() => updateClac('+')}>+</button>
           <button onClick ={() => updateClac('-')}>-</button>
           <button onClick={deleteLast}>DEl</button>
+          <button onClick ={() => clr()}>CLR</button>
         </div>
        <div className="digits">
         {createDigits()}
         <button onClick ={() => updateClac('0')}>0</button>
         <button onClick ={() => updateClac('.')}>.</button>
+        
         
         <button onClick={calculate}>=</button>
        </div>
